@@ -47,7 +47,7 @@ def signup_view(request):
 @login_required
 def index_view(request):
     if request.method == "GET":
-        return render(request, 'index.html')
+        return render(request, 'index.html', { "username": request.user.username })
     
 @login_required
 def logout_user(request):
